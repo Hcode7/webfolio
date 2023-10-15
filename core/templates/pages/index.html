@@ -1,0 +1,105 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <section class="main">
+        <div>
+            <h2>Hello, I'm :<br><span>Back-end Developer</span></h2>
+            <h3>I build the good web-applications using django and more tools</h3>
+            <a href="#projects" class="main-btn">View my work</a>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com/amineratit/"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cards" id="services">
+        <h2 class="title">Services</h2>
+        <div class="content">
+            <div class="card">
+                <div class="gameImage">
+                    <img src="   https://cdn-icons-png.flaticon.com/512/876/876019.png " width="236" height="236" alt="" title="" class="img-small">            </div>
+                <div class="info">
+                    <h3>Build Completing Web applications</h3>
+                    <p>Build Completing and differents web applications using many tools like : django , node.js</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="gameImage">
+                    <img src="   https://cdn-icons-png.flaticon.com/512/5024/5024235.png " width="236" height="236" alt="" title="" class="img-small">                </div>
+                <div class="info">
+                    <h3>Freelance for Hours</h3>
+                    <p>I can build for you a  back-end web applications  with my experience in creating various numerous projects  I can help you for build : a ecommerce platforms , blog platforms, Api web apps , restaurant web apps , portfolio web apps and more</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="gameImage">
+                    <img src="   https://cdn-icons-png.flaticon.com/512/2436/2436874.png " width="236" height="236" alt="" title="" class="img-small">
+                </div>
+                <div class="info">
+                    <h3>Courses & Consultations</h3>
+                    <p>I can help you develop your level and gain experience in programming. Through my experience in learn many courses and project development, I can help you step by step to become a good developer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2 class="title">Projects</h2>
+        <div class="content">
+            {% for projects in project %}
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="../static/img/{{ projects.title }}.png" />
+                </div>
+                <div class="project-info">
+                    <p class="project-category">{{ projects.mini_title }}</p>
+                    <strong class="project-title">
+                        <span>{{ projects.title }}</span>
+                        <a href="{% url 'details' projects.pk %}" class="more-details">More Details</a>
+                    </strong>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </section>
+
+    <section class="cards contact" id="contact">
+        <h2 class="title">Let's work together</h2>
+        <div class="content">
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-phone"></i>
+                </div>
+                <div class="info">
+                    <h3>Phone</h3>
+                    <p>+20122222222</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <div class="info">
+                    <h3>Email</h3>
+                    <p>business@islam.com</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <p class="footer-title">Copyrights @ <span>Islam Mahfouz</span></p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+    </footer>
+
+{% endblock content %}
